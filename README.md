@@ -2,16 +2,16 @@
 
 A fictive "one-page" Web3 conference web page, with program, speaker overview, and ticket section, as well as practical information, built with semantic HTML5 and SASS. Developed for Medieinstitutet HTML & CSS course.
 
-Link to Live Site on GitHub Pages
+[Link to Live Site on GitHub Pages](https://buzzekau.github.io/BCU26D_HTML-CSS_Inl2/)
 
 ## Roadmap
-[x] Concept & Setup
-    [x] Simple wireframe of web page created
-    ![Conference Wireframe](conference_webpage_wireframe.png)
-    [x] Theme of the conference chosen
-    [x] Framework (Sass or Tailwind) for CSS chosen
-    [x] Repository setup (folder structure)
-    [x] Block Element Modifier (BEM) researched
+**[x] Concept & Setup**
+[x] Simple wireframe of web page created
+![Conference Wireframe](images/conference_webpage_wireframe.png)
+[x] Theme of the conference chosen
+[x] Framework (Sass or Tailwind) for CSS chosen
+[x] Repository setup (folder structure)
+[x] Block Element Modifier (BEM) researched
 
 [] Semantic HTML
     [] Program with the time, the “title” of each program item, the speaker’s name, and a brief description of the content of the “presentation.” You must include at least 5 program items.
@@ -95,7 +95,7 @@ Har du scenskräck så får du höra av dig till mig på Teams så får du instr
 ## Bedömning
 
 **För IG**
--Du har inte fullföljt uppgiften och möter inte kraven för G.
+- Du har inte fullföljt uppgiften och möter inte kraven för G.
 
 **För G**
 - Samtliga punkter från kravlistan och uppgiftsbeskrivningen är implementerade.
