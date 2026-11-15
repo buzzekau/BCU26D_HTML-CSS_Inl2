@@ -5,38 +5,38 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
 [Link to Live Site on GitHub Pages](https://buzzekau.github.io/BCU26D_HTML-CSS_Inl2/)
 
 ## Roadmap
-**[x] Concept & Setup**
-[x] Simple wireframe of web page created
-![Conference Wireframe](images/conference_webpage_wireframe.png)
-[x] Theme of the conference chosen
-[x] Framework (Sass or Tailwind) for CSS chosen
-[x] Repository setup (folder structure)
-[x] Block Element Modifier (BEM) researched
+**- [x] Concept & Setup**
+    - [x] Simple wireframe of web page created
+    ![Conference Wireframe](images/conference_webpage_wireframe.png)
+    - [x] Theme of the conference chosen
+    - [x] Framework (Sass or Tailwind) for CSS chosen
+    - [x] Repository setup (folder structure)
+    - [x] Block Element Modifier (BEM) researched
 
-[] Semantic HTML
-    [] Program with the time, the “title” of each program item, the speaker’s name, and a brief description of the content of the “presentation.” You must include at least 5 program items.
-    [] A “gallery” of the conference speakers. You must include at least 5 speakers.
-    [] Ticket tiers—you can come up with your own here. For example, “Student,” “After Work,” “Exhibitor,” etc. You must include at least 3 ticket tiers.
-    [] There must be practical information, such as the address, a map (a static image—not an interactive map), etc.
+**- [] Semantic HTML**
+- [] Program with the time, the “title” of each program item, the speaker’s name, and a brief description of the content of the “presentation.” You must include at least 5 program items.
+- [] A “gallery” of the conference speakers. You must include at least 5 speakers.
+- [] Ticket tiers—you can come up with your own here. For example, “Student,” “After Work,” “Exhibitor,” etc. You must include at least 3 ticket tiers.
+- [] There must be practical information, such as the address, a map (a static image—not an interactive map), etc.
 
-[] CSS System & Advanced Selectors
-    [] Partials & Mixins setup
-    [] BEM naming & logic implemented
-    [] Combinator selectors implemented 
+**- [] CSS System & Advanced Selectors**
+- [] Partials & Mixins setup
+- [] BEM naming & logic implemented
+- [] Combinator selectors implemented 
 
-[] Responsiveness & Themes
-    [] Site Responsiveness enabled
-    [x] Light & Dark Mode switching enabled
-    [] Keyframe animations implemented
-    [] Focus states implemented
-    [] Reduced-Motion animation implemented
+**- [] Responsiveness & Themes**
+- [] Site Responsiveness enabled
+- [x] Light & Dark Mode switching enabled
+- [] Keyframe animations implemented
+- [] Focus states implemented
+- [] Reduced-Motion animation implemented
 
-[] Audit
-    [] Requirement checklist implemented (see below at Kravlist & G/VG Criteria)
-    [] Code formated 
-    [] HTML & CSS validated via W3C
-    [] Accessibility, Best Practice and Performance analysis done via Lighthouse
-    [] README.md file update with AI log and learnings
+- [] Audit
+-    [] Requirement checklist implemented (see below at Kravlist & G/VG Criteria)
+-    [] Code formated 
+-    [] HTML & CSS validated via W3C
+-    [] Accessibility, Best Practice and Performance analysis done via Lighthouse
+-    [] README.md file update with AI log and learnings
 
 ---
 
