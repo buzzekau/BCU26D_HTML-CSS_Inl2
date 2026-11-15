@@ -1,31 +1,36 @@
 # Conference web page
 
-A fictive "one-page" conference web page, with program, speaker overview, and ticket section, as well as practical information, built with semantic HTMLS and SASS. Developed for Medieinstitutet HTML & CSS course.
+A fictive "one-page" Web3 conference web page, with program, speaker overview, and ticket section, as well as practical information, built with semantic HTML5 and SASS. Developed for Medieinstitutet HTML & CSS course.
 
 Link to Live Site on GitHub Pages
 
 ## Roadmap
-[] Concept & Setup
-    [] Simple wireframe of web page created
+[x] Concept & Setup
+    [x] Simple wireframe of web page created
+    ![Conference Wireframe](conference_webpage_wireframe.png)
     [x] Theme of the conference chosen
-    [] Framework (Sassor Tailwind) for CSS chosen
-    [] Repository setup (folder structure)
-    [] Block Element Modifier (BEM) researched
+    [x] Framework (Sass or Tailwind) for CSS chosen
+    [x] Repository setup (folder structure)
+    [x] Block Element Modifier (BEM) researched
+
 [] Semantic HTML
     [] Program with the time, the “title” of each program item, the speaker’s name, and a brief description of the content of the “presentation.” You must include at least 5 program items.
     [] A “gallery” of the conference speakers. You must include at least 5 speakers.
     [] Ticket tiers—you can come up with your own here. For example, “Student,” “After Work,” “Exhibitor,” etc. You must include at least 3 ticket tiers.
     [] There must be practical information, such as the address, a map (a static image—not an interactive map), etc.
+
 [] CSS System & Advanced Selectors
     [] Partials & Mixins setup
     [] BEM naming & logic implemented
     [] Combinator selectors implemented 
+
 [] Responsiveness & Themes
     [] Site Responsiveness enabled
-    [] Light & Dark Mode switching enabled
+    [x] Light & Dark Mode switching enabled
     [] Keyframe animations implemented
     [] Focus states implemented
-    [] Reduced-Moten animation implemented
+    [] Reduced-Motion animation implemented
+
 [] Audit
     [] Requirement checklist implemented (see below at Kravlist & G/VG Criteria)
     [] Code formated 
