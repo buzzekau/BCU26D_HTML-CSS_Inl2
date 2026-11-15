@@ -1,0 +1,66 @@
+/* Prevent padding and borders from increasing an element's declared size. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove browser defaults that should be defined by the site styles. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Allow percentage-based heights in the application */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth Scrolling for Internal Navigation */
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+/* Remove built-in form typography styles */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Remove list styles (bullets/numbers) in lists with a class attribute. */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Keep content available to assistive technology while hiding it visually. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}/*# sourceMappingURL=main.css.map */
