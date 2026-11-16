@@ -15,7 +15,7 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
     - [x] Repository setup (folder structure)
     - [x] Block Element Modifier (BEM) researched
 
-- [ ] **Semantic HTML**
+- [x] **Semantic HTML**
     - [x] Program with the time, the “title” of each program item, the speaker’s name, and a brief description of the content of the “presentation.” You must include at least 5 program items.
     - [x] A “gallery” of the conference speakers. You must include at least 5 speakers.
     - [x] Ticket tiers—you can come up with your own here. For example, “Student,” “After Work,” “Exhibitor,” etc. You must include at least 3 ticket tiers.

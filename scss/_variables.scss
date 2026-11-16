@@ -1,11 +1,23 @@
 /* Variables */
 :root {
+    /* Colors */
     --color-bg: #3D3640;
     --color-surface: #000000;
     --color-text: #19F500;
-    --color-text-muted: #F5D018;
+    --color-text-muted: #FFFFFF;
     --color-primary: #F518A7;
+    --color-secondary: #F5D018;
+
+    /* Typography */
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-size: 1rem;
+    --line-height: 1.5;
+
+    /* Spacing */
     --spacing-unit: 1rem;
+    --radius-card: 12px;
+    --radius-button: 6px;
+    --transition-smooth: all 0.3s ease-in-out;
 }
 
 /* Light mode */
@@ -16,5 +28,6 @@
         --color-text: #111111;
         --color-text-muted: #555555;
         --color-primary: #880AC2;
+        --color-secondary: #2900F5;
     }
 }
