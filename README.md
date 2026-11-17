@@ -23,8 +23,8 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
 
 - [ ] **CSS System & Advanced Selectors**
     - [ ] Partials & Mixins setup
-    - [ ] BEM naming & logic implemented
-    - [ ] Combinator selectors implemented 
+    - [ ] BEM naming & logic implemented and described
+    - [ ] Combinator selectors implemented and described
 
 - [ ] **Responsiveness & Themes**
     - [ ] Site Responsiveness enabled

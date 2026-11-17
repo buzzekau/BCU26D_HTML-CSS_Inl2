@@ -95,4 +95,45 @@ select {
     --color-primary: #880AC2;
     --color-secondary: #2900F5;
   }
+}
+/* Header*/
+.header {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  padding: var(--spacing-unit);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+.header__title {
+  font-family: var(--font-family);
+  font-size: calc(var(--font-size) * 2);
+  font-weight: bold;
+  margin-left: var(--spacing-unit);
+}
+.header__nav {
+  grid-column: span 2;
+}
+.header .nav__list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.header .nav__item {
+  padding: var(--spacing-unit);
+}
+.header .nav__link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+.header .nav__link:hover {
+  color: var(--color-primary);
+}
+.header .nav__link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }/*# sourceMappingURL=main.css.map */
