@@ -259,7 +259,14 @@ section { // Style for all sections
     }
 }
 
-/* Location Section */
+/* Location Image */
+.location__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+    border: 2px solid var(--color-primary);
+}
 
 /* Footer */
 .footer {

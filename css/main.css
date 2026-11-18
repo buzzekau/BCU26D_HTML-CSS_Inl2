@@ -326,7 +326,16 @@ section > p {
   background-color: var(--color-primary);
 }
 
-/* Location Section */
+/* Location Image */
+.location__image {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: var(--radius-card);
+  border: 2px solid var(--color-primary);
+}
+
 /* Footer */
 .footer {
   background-color: var(--color-surface);
