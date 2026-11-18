@@ -46,7 +46,8 @@ section { // Style for all sections
 
 /* Grid Layouts */
 .program__grid,
-.speakers__grid {
+.speakers__grid,
+.tickets__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--spacing-unit);
@@ -194,12 +195,76 @@ section { // Style for all sections
     }
 }
 
-/*Footer*/
+/* Tickets Card */
+.ticket-card {
+    color: var(--color-surface);
+    background-color: var(--color-text);
+    padding: var(--spacing-unit);
+    border: 2px solid var(--color-text);
+    border-radius: var(--radius-card);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-unit);
+
+    &__type {
+        font-size: calc(var(--font-size) * 1.5);
+        font-weight: bold;
+    }
+
+    &__price {
+        font-size: calc(var(--font-size) * 2);
+        color: var(--color-surface);
+    }
+
+    &__benefits{
+        list-style-type: disc;
+        padding-left: var(--spacing-unit);
+        color: var(--color-surface);
+    }
+
+    &__button {
+        color: var(--color-surface);        
+        background-color: var(--color-secondary);
+        padding: var(--spacing-unit);
+        border: none;
+        border-radius: var(--radius-button);
+        cursor: pointer;
+        transition: var(--transition-smooth);
+
+        &:hover {
+            background-color: var(--color-primary);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    }
+}
+
+/* Special styling for the VIP ticket card */
+.ticket-card:nth-child(2) { // Pseudo-class selector for the second ticket card (VIP)
+    background-color: var(--color-secondary);
+    color: var(--color-surface);
+
+    .ticket-card__button {
+        background-color: var(--color-text);
+    }
+
+    .ticket-card__button:hover {
+        background-color: var(--color-primary);
+    }
+}
+
+/* Location Section */
+
+/* Footer */
 .footer {
     background-color: var(--color-surface);
-    color: var(--color-text);
     padding: var(--spacing-unit);
-    text-align: center;
 
     &__text {
         margin: 0;
