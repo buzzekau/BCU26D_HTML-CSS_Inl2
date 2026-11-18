@@ -31,3 +31,12 @@
         --color-secondary: #2900F5;
     }
 }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .program-card { 
+        &__inner { 
+            transition: none; 
+        }
+    } 
+}

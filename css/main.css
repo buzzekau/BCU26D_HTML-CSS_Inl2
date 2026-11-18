@@ -96,6 +96,12 @@ select {
     --color-secondary: #2900F5;
   }
 }
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .program-card__inner {
+    transition: none;
+  }
+}
 /* Header*/
 .header {
   font-family: var(--font-family);
@@ -142,28 +148,94 @@ a:focus-visible {
 
 /* Global Sections */
 body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--color-text);
   background-color: var(--color-bg);
 }
 
 section {
-  color: var(--color-text);
-  background-color: var(--color-bg);
   padding: var(--spacing-unit);
   border: 2px solid var(--color-text);
   border-radius: var(--radius-card);
   margin: var(--spacing-unit);
 }
 section > h2 {
-  font-family: var(--font-family);
   font-size: calc(var(--font-size) * 2);
   font-weight: bold;
   margin-bottom: var(--spacing-unit);
 }
 section > p {
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  line-height: var(--line-height);
   margin-bottom: var(--spacing-unit);
+}
+
+/* Grid Layouts */
+.program__grid,
+.speakers__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-unit);
+}
+
+.program-card {
+  perspective: 1000px;
+  min-height: 250px;
+  /* Flip effect on hover AND keyboard focus */
+}
+.program-card:hover .program-card__inner, .program-card:focus-within .program-card__inner {
+  transform: rotateY(180deg);
+}
+.program-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+.program-card {
+  /* Front and Back Faces */
+}
+.program-card__front, .program-card__back {
+  position: absolute;
+  inset: 0;
+  padding: var(--spacing-unit);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-card);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.program-card__front {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+.program-card__back {
+  color: var(--color-surface);
+  background-color: var(--color-text);
+  transform: rotateY(180deg);
+}
+.program-card__title {
+  font-size: calc(var(--font-size) * 1.5);
+  font-weight: bold;
+  margin-bottom: var(--spacing-unit);
+}
+.program-card__time {
+  font-size: calc(var(--font-size) * 0.875);
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-unit);
+}
+.program-card__speaker {
+  font-size: calc(var(--font-size) * 1.25);
+  font-weight: bold;
+  margin-bottom: var(--spacing-unit);
+}
+.program-card__description {
+  font-size: var(--font-size);
+  color: var(--color-surface);
+  margin: 0;
 }
 
 /*Footer*/
