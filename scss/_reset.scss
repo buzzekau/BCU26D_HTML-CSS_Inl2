@@ -1,7 +1,7 @@
 /* Prevent padding and borders from increasing an element's declared size. */
 *,
-*::before,
-*::after {
+*::before, // Pseudo-element for the before state
+*::after { // Pseudo-element for the after state
     box-sizing: border-box;
 }
 
