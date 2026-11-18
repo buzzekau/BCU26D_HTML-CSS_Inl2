@@ -1,40 +1,6 @@
 @use "variables";
 
-/* Header*/
-.header { // BEM block for the sticky header
-    font-family: var(--font-family);
-    background-color: var(--color-surface);
-    color: var(--color-text);
-    padding: var(--spacing-unit);
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-
-    &__title {
-        font-size: calc(var(--font-size) * 2.5);
-        font-weight: bold;
-        margin-left: var(--spacing-unit);
-    }
-
-    &__nav { // BEM element for the navigation
-        grid-column: span 2;
-    }
-
-    &__nav > .nav__list { // child selector for the navigation list
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .nav__item {
-        padding: var(--spacing-unit);
-    }
-}
 
 /* Links */
 a {
@@ -86,6 +52,43 @@ section { // Style for all sections
     gap: var(--spacing-unit);
 }
 
+/* Header*/
+.header { // BEM block for the sticky header
+    font-family: var(--font-family);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    padding: var(--spacing-unit);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    &__title {
+        font-size: calc(var(--font-size) * 2.5);
+        font-weight: bold;
+        margin-left: var(--spacing-unit);
+    }
+
+    &__nav { // BEM element for the navigation
+        grid-column: span 2;
+    }
+
+    &__nav > .nav__list { // child selector for the navigation list
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .nav__item {
+        padding: var(--spacing-unit);
+    }
+}
+
+/* Program Card */
 .program-card {
     perspective: 1000px; // Add perspective for 3D effect
     min-height: 250px; // Ensure cards have a minimum height
@@ -93,6 +96,8 @@ section { // Style for all sections
     /* Flip effect on hover AND keyboard focus */
     &:hover &__inner,
     &:focus-within &__inner {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
         transform: rotateY(180deg); // Flip the card on hover
     }
 
@@ -146,14 +151,46 @@ section { // Style for all sections
     &__speaker {
         font-size: calc(var(--font-size) * 1.25);
         font-weight: bold;
+        color: var(--color-primary);
         margin-bottom: var(--spacing-unit);
     }
 
     &__description {
         font-size: var(--font-size);
-        color: var(--color-surface);
         margin: 0;
-   
+    }
+}
+
+/* Speaker Card */
+.speaker-card  {
+    background-color: var(--color-surface);
+    padding: var(--spacing-unit);
+    border: 2px solid var(--color-text);
+    border-radius: var(--radius-card);
+    margin: 0;
+    transition: var(--transition-smooth);
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;     
+        margin-bottom: var(--spacing-unit);
+    }
+
+    &__name {
+        font-size: calc(var(--font-size) * 1.25);
+        font-weight: bold;
+        color: var(--color-primary);
+        margin-bottom: var(--spacing-unit);
+    }
+
+    &__bio {
+        font-size: var(--font-size);
+        margin-bottom: var(--spacing-unit);
     }
 }
 
