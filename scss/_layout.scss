@@ -2,6 +2,7 @@
 
 /* Header*/
 .header { // BEM block for the sticky header
+    font-family: var(--font-family);
     background-color: var(--color-surface);
     color: var(--color-text);
     padding: var(--spacing-unit);
@@ -15,7 +16,6 @@
     align-items: center;
 
     &__title {
-        font-family: var(--font-family);
         font-size: calc(var(--font-size) * 2.5);
         font-weight: bold;
         margin-left: var(--spacing-unit);
@@ -51,6 +51,39 @@ a {
         outline-offset: 2px;
     }
 }
+
+/* Global Sections */
+body {
+    background-color: var(--color-bg);
+}
+
+section { // Style for all sections
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    padding: var(--spacing-unit);
+    border: 2px solid var(--color-text);
+    border-radius: var(--radius-card);
+    margin: var(--spacing-unit);
+
+    > h2 { // Style for section headings
+        font-family: var(--font-family);
+        font-size: calc(var(--font-size) * 2);
+        font-weight: bold;
+        margin-bottom: var(--spacing-unit);
+    }
+
+    > p { // Style for section paragraphs
+        font-family: var(--font-family);
+        font-size: var(--font-size);
+        line-height: var(--line-height);
+        margin-bottom: var(--spacing-unit);
+    }
+}
+
+.location {
+   
+    }
+
 
 /*Footer*/
 .footer {
