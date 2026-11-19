@@ -98,7 +98,19 @@ select {
 }
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
   .program-card__inner {
+    transition: none;
+  }
+  .speaker-card {
+    transition: none;
+  }
+  .ticket-card__button {
+    transition: none;
+  }
+  .footer__back-to-top {
     transition: none;
   }
 }
@@ -185,7 +197,7 @@ section > p {
   min-height: 250px;
   /* Flip effect on hover AND keyboard focus */
 }
-.program-card:hover .program-card__inner, .program-card:focus-within .program-card__inner {
+.program-card:hover .program-card__inner, .program-card:focus-within .program-card__inner { /* Pseudo-class for focus state */
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   transform: rotateY(180deg);

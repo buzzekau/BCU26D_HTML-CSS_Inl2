@@ -34,9 +34,29 @@
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+    a {
+        transition: none;
+    }
+
     .program-card { 
         &__inner { 
             transition: none; 
         }
     } 
+
+    .speaker-card {
+            transition: none;
+        }
+
+    .ticket-card {
+        &__button {
+            transition: none;
+        }
+    }
+
+    .footer {
+        &__back-to-top {
+            transition: none;
+        }
+    }
 }

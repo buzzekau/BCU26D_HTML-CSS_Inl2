@@ -96,7 +96,7 @@ section { // Style for all sections
 
     /* Flip effect on hover AND keyboard focus */
     &:hover &__inner,
-    &:focus-within &__inner {
+    &:focus-within &__inner { /* Pseudo-class for focus state */
         outline: 2px solid var(--color-primary);
         outline-offset: 2px;
         transform: rotateY(180deg); // Flip the card on hover

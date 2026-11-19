@@ -10,8 +10,8 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
 
         ![Conference Wireframe](images/conference_webpage_wireframe.png)
 
-    - [x] Theme of the conference chosen
-    - [x] Framework (Sass or Tailwind) for CSS chosen
+    - [x] Theme of the conference chosen -Web3
+    - [x] Framework (Sass or Tailwind) for CSS chosen - Sass
     - [x] Repository setup (folder structure)
     - [x] Block Element Modifier (BEM) researched
 
@@ -22,23 +22,101 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
     - [x] There must be practical information, such as the address, a map (a static image—not an interactive map), etc.
 
 - [ ] **CSS System & Advanced Selectors**
-    - [ ] Partials & Mixins setup
-    - [ ] BEM naming & logic implemented and described
-    - [ ] Combinator selectors implemented and described
+    - [x] Partials setup
+    - [ ] Variables & Mixins setup
+    - [x] BEM naming & logic implemented and described
+    - [x] Combinator selectors implemented and described
 
 - [ ] **Responsiveness & Themes**
     - [ ] Site Responsiveness enabled
     - [x] Light & Dark Mode switching enabled
-    - [ ] Keyframe animations implemented
-    - [ ] Focus states implemented
-    - [ ] Reduced-Motion animation implemented
+    - [x] Keyframe animations implemented
+    - [x] Focus states implemented
+    - [x] Reduced-Motion animation implemented
 
 - [ ] **Audit**
-    - [ ] Requirement checklist implemented (see below at Kravlist & G/VG Criteria)
+    - [x] Requirement checklist implemented (see below at Kravlist & G/VG Criteria)
     - [ ] Code formated 
     - [ ] HTML & CSS validated via W3C
     - [ ] Accessibility, Best Practice and Performance analysis done via Lighthouse
     - [ ] README.md file update with AI log and learnings
+
+## Documentation
+- ### CSS Naming Convention: BEM (Block, Element, Modifier)
+This project strictly follows the **BEM (Block, Element, Modifier)** methodology for CSS class naming and component architecture. BEM ensures clean, modular, and self-documenting code while avoiding global scope pollution and specificity conflicts. 
+
+### 1. BEM Architecture & Syntax Rules 
+* **Block (`.block`)**: Standalone, reusable UI components that form the building blocks of the page layout. 
+    * *Examples from project*: `.header`, `.program-card`, `.speaker-card`, `.ticket-card`, `.location`, `.footer` 
+* **Element (`.block__element`)**: Parts tied semantically to a parent block, denoted by double underscores (`__`). Elements cannot exist independently outside their parent block. 
+    * *Examples from project*: `.program-card__inner`, `.program-card__front`, `.speaker-card__image`, `.ticket-card__button` 
+* **Modifier / State Variation**: Represents different states, themes, or structural variations of a block or element. 
+    * *Examples from project*: `.ticket-card:nth-child(2)` (Structural pseudo-class modifier applied to highlight the featured VIP tier), `@media (prefers-color-scheme: light)` (Theme level overrides on CSS custom properties).
+
+### 2. Implementation Example (HTML & SCSS Synergy)
+BEM pairs seamlessly with SCSS nesting using the parent selector (`&`), keeping stylesheet partials DRY and readable without creating deep selector chains: 
+
+#### HTML (`index.html`) 
+`<article class="program-card" tabindex="0">
+    <div class="program-card__inner">
+        <div class="program-card__front">
+            <h3 lass="program-card__title">Keynote: The Future of Web3</h3>
+            <p class="program-card__time">                <time>09:00 AM</time>                </p>
+            <p class="program-card__speaker">Speaker: Jane Doe</p>
+        </div>
+        <div class="program-card__back">
+            <p class="program-card__description">
+                Join us for an inspiring keynote on the future of Web3
+                technologies.
+            </p>
+        </div>
+    </div>
+</article>`
+
+### SCSS (`_layout.css`)
+`.program-card { 
+    perspective: 1000px; 
+    
+    &__inner { 
+        position: relative; 
+        width: 100%; 
+        height: 100%; 
+        transition: transform 0.6s ease-in-out;
+        transform-style: preserve-3d; 
+    } 
+    
+    &__front, 
+    &__back { 
+        position: absolute; 
+        inset: 0; 
+        backface-visibility: hidden; 
+    }
+    
+    &__front { 
+        background-color: var(--color-surface);
+    } 
+    
+    &__back { 
+        transform: rotateY(180deg); 
+    }
+    
+    &__title { 
+        font-size: calc(var(--font-size) * 1.5); 
+    } 
+}`
+
+- ### Advanced Selectors
+    - **Pseudo-classes**: 
+        - `:hover` - Links & Buttons change background/text colors on mouse hover; Speaker & Program cards trigger interactive visual states.
+        - `:focus-visible` - Displays a prominent outline on links and buttons exclusively during keyboard navigation (`Tab`), keeping focus indicators clear for accessibility without showing focus rings on mouse clicks.
+        - `:focus-within` - Triggers the 3D card flip animation on `.program-card` when focus moves inside the card, allowing keyboard users to view the rear description.
+        - `:nth-child(2)` - Targets the second ticket card in `.tickets__grid` to apply featured VIP styling and custom button colors.
+    - **Pseudo-elements**: 
+        - `::before` & `::after` - Targets generated content elements before and after an element's content in `_reset.scss` to guarantee `box-sizing: border-box` is applied universally.
+    - **Combinators**: Direct child selector 
+        - `.header__nav > .nav__list` - Direct child combinator targeting the navigation list directly inside `.header__nav`, isolating its layout from potential sub-lists elsewhere.
+        - `section > h2` - Direct child combinator styling main section headings consistently across the page without affecting nested card titles (`.program-card__title`, `.speaker-card__name`).
+        - `section > p` - Direct child combinator styling lead section intro paragraphs without altering card body text (`.speaker-card__bio`).
 
 ---
 
