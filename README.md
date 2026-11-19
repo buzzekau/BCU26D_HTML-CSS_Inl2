@@ -42,22 +42,22 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
     - [ ] README.md file update with AI log and learnings
 
 ## Documentation
-- ### CSS Naming Convention: BEM (Block, Element, Modifier)
+### 1. CSS Naming Convention: BEM (Block, Element, Modifier)
 This project strictly follows the **BEM (Block, Element, Modifier)** methodology for CSS class naming and component architecture. BEM ensures clean, modular, and self-documenting code while avoiding global scope pollution and specificity conflicts. 
 
-### 1. BEM Architecture & Syntax Rules 
-* **Block (`.block`)**: Standalone, reusable UI components that form the building blocks of the page layout. 
-    * *Examples from project*: `.header`, `.program-card`, `.speaker-card`, `.ticket-card`, `.location`, `.footer` 
-* **Element (`.block__element`)**: Parts tied semantically to a parent block, denoted by double underscores (`__`). Elements cannot exist independently outside their parent block. 
-    * *Examples from project*: `.program-card__inner`, `.program-card__front`, `.speaker-card__image`, `.ticket-card__button` 
-* **Modifier / State Variation**: Represents different states, themes, or structural variations of a block or element. 
-    * *Examples from project*: `.ticket-card:nth-child(2)` (Structural pseudo-class modifier applied to highlight the featured VIP tier), `@media (prefers-color-scheme: light)` (Theme level overrides on CSS custom properties).
+- ### BEM Architecture & Syntax Rules 
+    - **Block (`.block`)**: Standalone, reusable UI components that form the building blocks of the page layout. 
+        - *Examples from project*: `.header`, `.program-card`, `.speaker-card`, `.ticket-card`, `.location`, `.footer` 
+    - **Element (`.block__element`)**: Parts tied semantically to a parent block, denoted by double underscores (`__`). Elements cannot exist independently outside their parent block. 
+        - *Examples from project*: `.program-card__inner`, `.program-card__front`, `.speaker-card__image`, `.ticket-card__button` 
+    - **Modifier / State Variation**: Represents different states, themes, or structural variations of a block or element. 
+        - *Examples from project*: `.ticket-card:nth-child(2)` (Structural pseudo-class modifier applied to highlight the featured VIP tier), `@media (prefers-color-scheme: light)` (Theme level overrides on CSS custom properties).
 
-### 2. Implementation Example (HTML & SCSS Synergy)
+- ### Implementation Example (HTML & SCSS Synergy)
 BEM pairs seamlessly with SCSS nesting using the parent selector (`&`), keeping stylesheet partials DRY and readable without creating deep selector chains: 
 
 #### HTML (`index.html`) 
-`<article class="program-card" tabindex="0">
+```<article class="program-card" tabindex="0">
     <div class="program-card__inner">
         <div class="program-card__front">
             <h3 lass="program-card__title">Keynote: The Future of Web3</h3>
@@ -71,10 +71,10 @@ BEM pairs seamlessly with SCSS nesting using the parent selector (`&`), keeping 
             </p>
         </div>
     </div>
-</article>`
+</article>```
 
 ### SCSS (`_layout.css`)
-`.program-card { 
+.program-card { 
     perspective: 1000px; 
     
     &__inner { 
@@ -105,18 +105,18 @@ BEM pairs seamlessly with SCSS nesting using the parent selector (`&`), keeping 
     } 
 }`
 
-- ### Advanced Selectors
-    - **Pseudo-classes**: 
-        - `:hover` - Links & Buttons change background/text colors on mouse hover; Speaker & Program cards trigger interactive visual states.
-        - `:focus-visible` - Displays a prominent outline on links and buttons exclusively during keyboard navigation (`Tab`), keeping focus indicators clear for accessibility without showing focus rings on mouse clicks.
-        - `:focus-within` - Triggers the 3D card flip animation on `.program-card` when focus moves inside the card, allowing keyboard users to view the rear description.
-        - `:nth-child(2)` - Targets the second ticket card in `.tickets__grid` to apply featured VIP styling and custom button colors.
-    - **Pseudo-elements**: 
-        - `::before` & `::after` - Targets generated content elements before and after an element's content in `_reset.scss` to guarantee `box-sizing: border-box` is applied universally.
-    - **Combinators**: Direct child selector 
-        - `.header__nav > .nav__list` - Direct child combinator targeting the navigation list directly inside `.header__nav`, isolating its layout from potential sub-lists elsewhere.
-        - `section > h2` - Direct child combinator styling main section headings consistently across the page without affecting nested card titles (`.program-card__title`, `.speaker-card__name`).
-        - `section > p` - Direct child combinator styling lead section intro paragraphs without altering card body text (`.speaker-card__bio`).
+### 1. Advanced Selectors
+- **Pseudo-classes**: 
+    - `:hover` - Links & Buttons change background/text colors on mouse hover; Speaker & Program cards trigger interactive visual states.
+    - `:focus-visible` - Displays a prominent outline on links and buttons exclusively during keyboard navigation (`Tab`), keeping focus indicators clear for accessibility without showing focus rings on mouse clicks.
+    - `:focus-within` - Triggers the 3D card flip animation on `.program-card` when focus moves inside the card, allowing keyboard users to view the rear description.
+    - `:nth-child(2)` - Targets the second ticket card in `.tickets__grid` to apply featured VIP styling and custom button colors.
+- **Pseudo-elements**: 
+    - `::before` & `::after` - Targets generated content elements before and after an element's content in `_reset.scss` to guarantee `box-sizing: border-box` is applied universally.
+- **Combinators**: Direct child selector 
+    - `.header__nav > .nav__list` - Direct child combinator targeting the navigation list directly inside `.header__nav`, isolating its layout from potential sub-lists elsewhere.
+    - `section > h2` - Direct child combinator styling main section headings consistently across the page without affecting nested card titles (`.program-card__title`, `.speaker-card__name`).
+    - `section > p` - Direct child combinator styling lead section intro paragraphs without altering card body text (`.speaker-card__bio`).
 
 ---
 
