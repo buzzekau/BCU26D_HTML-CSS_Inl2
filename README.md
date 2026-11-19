@@ -54,56 +54,56 @@ This project strictly follows the **BEM (Block, Element, Modifier)** methodology
         - *Examples from project*: `.ticket-card:nth-child(2)` (Structural pseudo-class modifier applied to highlight the featured VIP tier), `@media (prefers-color-scheme: light)` (Theme level overrides on CSS custom properties).
 
 - ### Implementation Example (HTML & SCSS Synergy)
-BEM pairs seamlessly with SCSS nesting using the parent selector (`&`), keeping stylesheet partials DRY and readable without creating deep selector chains: 
+    BEM pairs seamlessly with SCSS nesting using the parent selector (`&`), keeping stylesheet partials DRY and readable without creating deep selector chains: 
 
-#### HTML (`index.html`) 
-```<article class="program-card" tabindex="0">
-    <div class="program-card__inner">
-        <div class="program-card__front">
-            <h3 lass="program-card__title">Keynote: The Future of Web3</h3>
-            <p class="program-card__time">                <time>09:00 AM</time>                </p>
-            <p class="program-card__speaker">Speaker: Jane Doe</p>
+    #### HTML (`index.html`) 
+    <article class="program-card" tabindex="0">
+        <div class="program-card__inner">
+            <div class="program-card__front">
+                <h3 lass="program-card__title">Keynote: The Future of Web3</h3>
+                <p class="program-card__time">                <time>09:00 AM</time>                </p>
+                <p class="program-card__speaker">Speaker: Jane Doe</p>
+            </div>
+            <div class="program-card__back">
+                <p class="program-card__description">
+                    Join us for an inspiring keynote on the future of Web3
+                    technologies.
+                </p>
+            </div>
         </div>
-        <div class="program-card__back">
-            <p class="program-card__description">
-                Join us for an inspiring keynote on the future of Web3
-                technologies.
-            </p>
-        </div>
-    </div>
-</article>```
+    </article>
 
-### SCSS (`_layout.css`)
-.program-card { 
-    perspective: 1000px; 
-    
-    &__inner { 
-        position: relative; 
-        width: 100%; 
-        height: 100%; 
-        transition: transform 0.6s ease-in-out;
-        transform-style: preserve-3d; 
-    } 
-    
-    &__front, 
-    &__back { 
-        position: absolute; 
-        inset: 0; 
-        backface-visibility: hidden; 
+    ### SCSS (`_layout.css`)
+    .program-card { 
+        perspective: 1000px; 
+        
+        &__inner { 
+            position: relative; 
+            width: 100%; 
+            height: 100%; 
+            transition: transform 0.6s ease-in-out;
+            transform-style: preserve-3d; 
+        } 
+        
+        &__front, 
+        &__back { 
+            position: absolute; 
+            inset: 0; 
+            backface-visibility: hidden; 
+        }
+        
+        &__front { 
+            background-color: var(--color-surface);
+        } 
+        
+        &__back { 
+            transform: rotateY(180deg); 
+        }
+        
+        &__title { 
+            font-size: calc(var(--font-size) * 1.5); 
+        } 
     }
-    
-    &__front { 
-        background-color: var(--color-surface);
-    } 
-    
-    &__back { 
-        transform: rotateY(180deg); 
-    }
-    
-    &__title { 
-        font-size: calc(var(--font-size) * 1.5); 
-    } 
-}`
 
 ### 1. Advanced Selectors
 - **Pseudo-classes**: 
