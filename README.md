@@ -21,14 +21,14 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
     - [x] Ticket tiers—you can come up with your own here. For example, “Student,” “After Work,” “Exhibitor,” etc. You must include at least 3 ticket tiers.
     - [x] There must be practical information, such as the address, a map (a static image—not an interactive map), etc.
 
-- [ ] **CSS System & Advanced Selectors**
+- [X] **CSS System & Advanced Selectors**
     - [x] Partials setup
-    - [ ] Variables & Mixins setup
+    - [x] Variables & Mixins setup
     - [x] BEM naming & logic implemented and described
     - [x] Combinator selectors implemented and described
 
-- [ ] **Responsiveness & Themes**
-    - [ ] Site Responsiveness enabled
+- [x] **Responsiveness & Themes**
+    - [x] Site Responsiveness enabled
     - [x] Light & Dark Mode switching enabled
     - [x] Keyframe animations implemented
     - [x] Focus states implemented

@@ -82,6 +82,24 @@ section { // Style for all sections
     .nav__item {
         padding: var(--spacing-unit);
     }
+
+        @media (max-height: 600px) { // Media query for small height screens
+        position: static; // Disable sticky positioning on small height screens
+    }
+
+    @media (max-width: 580px) { // Media query for small width screens
+        padding: calc(var(--spacing-unit) / 2); // Reduce padding on small width screens
+        
+        &__logo {
+            width: 45px; // Reduce logo size on small width screens
+            height: 45px; // Reduce logo height on small width screens
+        }
+
+        &__title {
+            font-size: calc(var(--font-size) * 1.3); // Reduce title size on small width screens
+            margin-left: calc(var(--spacing-unit) / 2); // Reduce left margin on small width screens
+        }
+    }
 }
 
 /* Program Card */
