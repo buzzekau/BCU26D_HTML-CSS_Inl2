@@ -34,7 +34,7 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
     - [x] Focus states implemented
     - [x] Reduced-Motion animation implemented
 
-- [ ] **Audit**
+- [x] **Audit**
     - [x] Requirement checklist implemented (see below at Kravlist & G/VG Criteria)
     - [x] Code formated 
     - [x] HTML & CSS validated via W3C
@@ -43,13 +43,15 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
 
         ![Screenshot of CSS validation](images/CSS_validation.png)
 
-    - [ ] Accessibility (100), Best Practice (96) and Performance analysis done via Lighthouse
+    - [x] Accessibility (100), Best Practice (96) and Performance analysis (97) done via Lighthouse
 
         ![Screenshot of accessibility analysis](images/accessibilty_analysis.png)
 
         ![Sreenshot of best practices analysis](images/best_practices_analysis.png)
 
-    - [ ] README.md file update with AI log and learnings
+        ![Screenshot of performance analysis](images/performance_analysis.png)
+
+    - [x] README.md file update with AI log and learnings
 
 ## Documentation
 ### 1. CSS Naming Convention: BEM (Block, Element, Modifier)
@@ -131,6 +133,24 @@ This project strictly follows the **BEM (Block, Element, Modifier)** methodology
     - `.header__nav > .nav__list` - Direct child combinator targeting the navigation list directly inside `.header__nav`, isolating its layout from potential sub-lists elsewhere.
     - `section > h2` - Direct child combinator styling main section headings consistently across the page without affecting nested card titles (`.program-card__title`, `.speaker-card__name`).
     - `section > p` - Direct child combinator styling lead section intro paragraphs without altering card body text (`.speaker-card__bio`).
+
+### 3. AI Usage & Process Reflection 
+- **Tools Used** 
+    - **Gemini Notebook**: Used as a supervisor, architectural advisor, and accessibility/performance auditor. 
+    - **GitHub Copilot**: Used within the editor for inline code suggestions and autocompletion to increase coding speed. 
+- **Workflow & Interactive Roles** 
+    My approach to AI integration prioritized code ownership, deep understanding, and active learning rather than automated code generation: 
+    -  **Gemini Notebook (Supervisor & Mentor Role)**: I intentionally used Gemini Notebook as a technical supervisor. Rather than asking for full, pre-written code files, I used it to discuss architecture, review best practices, and diagnose complex layout edge cases (such as fixing the sticky header overlap at 300% browser zoom to satisfy WCAG 1.4.10 Reflow). The AI guided my workflow through targeted questions, conceptual explanations, and diagnostic hints, allowing me to write and structure the code myself. 
+    - **The Animation Exception**: The single exception where I requested a complete code block was for the  **3D card flip animation** (`.program-card`), as 3D CSS transforms were a completely new concept for me. Even in this instance, I requested a detailed, line-by-line explanation of the properties (`perspective`, `transform-style: preserve-3d`, `backface-visibility: hidden`, and `transform: rotateY(180deg)`) so I thoroughly understood how the animation mechanics worked before implementing it in my codebase. 
+    - **GitHub Copilot (Inline Assistance)**: Copilot acted as an intelligent editor assistant, speeding up repetitive tasks such as boilerplate HTML markup, standard CSS properties, and BEM class names while I maintained full control over the overall architecture.
+- **Key Insights & Technical Learnings** 
+    - **Build-Time vs. Runtime Variables**: Learned the fundamental distinction between static SCSS `$variables` (evaluated at compile time) and native CSS Custom Properties (`:root` with `--var`), which are required for dynamic `@media (prefers-color-scheme: light)` theme switching in the browser. 
+    - **Semantic HTML & Cascading Selectors**: Refactored generic `<div>` grid containers into semantic `<ol>` (chronological schedule) and `<ul>` (speaker/ticket lists) elements. 
+    - **Responsive Layout & WCAG Reflow**: Solved severe viewport overlap at 300% browser zoom on 1440px displays by implementing `@media (max-height: 600px)` to dynamically switch `.header` from `position: sticky` to `position: static`. 
+- **Critical Self-Reflection & Verification** 
+    - **Initial Knowledge Gap**: At the start of the project, I lacked experience with 3D CSS transforms and initially assumed Sass variables could handle dynamic browser-level theme switching. 
+    - **Independent Testing & Audit**: I did not accept AI suggestions blindly. Every line of code was verified in Chrome DevTools, validated via the W3C HTML Checker and W3C CSS Validator, and benchmarked using Chrome Lighthouse audits—ultimately reaching a **97 Mobile Performance score** and **100 Accessibility score**. 
+    - **Future Process Improvements**: Moving forward, I will continue leveraging GitHub Copilot for syntax speed while utilizing AI supervisors primarily for high-level architectural reviews, WCAG audits, and pair-debugging.
 
 ---
 
