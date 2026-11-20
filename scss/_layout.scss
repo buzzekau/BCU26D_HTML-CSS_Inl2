@@ -2,300 +2,319 @@
 
 /* Links */
 a {
-    color: var(--color-text);
-    text-decoration: none;
-    transition: var(--transition-smooth);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: var(--transition-smooth);
 
-    &:hover { // Pseudo-class for hover state
-        color: var(--color-primary);
-    }
+  &:hover {
+    // Pseudo-class for hover state
+    color: var(--color-primary);
+  }
 
-    &:focus-visible { // Pseudo-class for focus state
-        @include tab-focus; // Use the mixin for focus-visible state
-    }
+  &:focus-visible {
+    // Pseudo-class for focus state
+    @include tab-focus; // Use the mixin for focus-visible state
+  }
 }
 
 /* Global Sections */
 body {
-    font-family: var(--font-family);
-    font-size: var(--font-size);
-    line-height: var(--line-height);
-    color: var(--color-text);
-    background-color: var(--color-bg);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
-section { // Style for all sections
-    @include card-base; // Use the card-base mixin for consistent styling
-    margin: var(--spacing-unit);
+section {
+  // Style for all sections
+  @include card-base; // Use the card-base mixin for consistent styling
+  margin: var(--spacing-unit);
 
-    > h2 { // Style for section headings
-        font-size: calc(var(--font-size) * 2);
-        font-weight: bold;
-        margin-bottom: var(--spacing-unit);
-    }
+  > h2 {
+    // Style for section headings
+    font-size: calc(var(--font-size) * 2);
+    font-weight: bold;
+    margin-bottom: var(--spacing-unit);
+  }
 
-    > p { // Style for section paragraphs
-        margin-bottom: var(--spacing-unit);
-    }
+  > p {
+    // Style for section paragraphs
+    margin-bottom: var(--spacing-unit);
+  }
 }
 
 /* Grid Layouts */
 .program__grid,
 .speakers__grid,
 .tickets__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--spacing-unit);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-unit);
 
-    > li {
-        display: flex;
-        flex-direction: column;
-    }
+  > li {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Header*/
-.header { // BEM block for the sticky header
-    font-family: var(--font-family);
-    background-color: var(--color-surface);
-    color: var(--color-text);
+.header {
+  // BEM block for the sticky header
+  font-family: var(--font-family);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  padding: var(--spacing-unit);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+
+  &__title {
+    font-size: calc(var(--font-size) * 2.5);
+    font-weight: bold;
+    margin-left: var(--spacing-unit);
+  }
+
+  &__nav {
+    // BEM element for the navigation
+    grid-column: span 2;
+  }
+
+  &__nav > .nav__list {
+    // child selector for the navigation list
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .nav__item {
     padding: var(--spacing-unit);
+  }
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  @media (max-height: 600px) {
+    // Media query for small height screens
+    position: static; // Disable sticky positioning on small height screens
+  }
 
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
+  @media (max-width: 580px) {
+    // Media query for small width screens
+    padding: calc(
+      var(--spacing-unit) / 2
+    ); // Reduce padding on small width screens
+
+    &__logo {
+      width: 45px; // Reduce logo size on small width screens
+      height: 45px; // Reduce logo height on small width screens
+    }
 
     &__title {
-        font-size: calc(var(--font-size) * 2.5);
-        font-weight: bold;
-        margin-left: var(--spacing-unit);
+      font-size: calc(
+        var(--font-size) * 1.3
+      ); // Reduce title size on small width screens
+      margin-left: calc(
+        var(--spacing-unit) / 2
+      ); // Reduce left margin on small width screens
     }
-
-    &__nav { // BEM element for the navigation
-        grid-column: span 2;
-    }
-
-    &__nav > .nav__list { // child selector for the navigation list
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .nav__item {
-        padding: var(--spacing-unit);
-    }
-
-        @media (max-height: 600px) { // Media query for small height screens
-        position: static; // Disable sticky positioning on small height screens
-    }
-
-    @media (max-width: 580px) { // Media query for small width screens
-        padding: calc(var(--spacing-unit) / 2); // Reduce padding on small width screens
-        
-        &__logo {
-            width: 45px; // Reduce logo size on small width screens
-            height: 45px; // Reduce logo height on small width screens
-        }
-
-        &__title {
-            font-size: calc(var(--font-size) * 1.3); // Reduce title size on small width screens
-            margin-left: calc(var(--spacing-unit) / 2); // Reduce left margin on small width screens
-        }
-    }
+  }
 }
 
 /* Program Card */
 .program-card {
-    perspective: 1000px; // Add perspective for 3D effect
-    min-height: 250px; // Ensure cards have a minimum height
+  perspective: 1000px; // Add perspective for 3D effect
+  min-height: 250px; // Ensure cards have a minimum height
 
-    /* Flip effect on hover AND keyboard focus */
-    &:hover &__inner,
-    &:focus-within &__inner { // Pseudo-class for focus state
-        @include tab-focus; // Use the mixin for focus-visible state
-        transform: rotateY(180deg); // Flip the card on hover
-    }
+  /* Flip effect on hover AND keyboard focus */
+  &:hover &__inner,
+  &:focus-within &__inner {
+    // Pseudo-class for focus state
+    @include tab-focus; // Use the mixin for focus-visible state
+    transform: rotateY(180deg); // Flip the card on hover
+  }
 
-    &__inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.6s ease-in-out;
-        transform-style: preserve-3d;
-    }
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+  }
 
-    &__front,
-    &__back { // Both front and back faces of the card
-        position: absolute;
-        inset: 0;
-        @include card-base; // Use the card-base mixin for consistent styling
-        backface-visibility: hidden; // Hide the back face when flipped
+  &__front,
+  &__back {
+    // Both front and back faces of the card
+    position: absolute;
+    inset: 0;
+    @include card-base; // Use the card-base mixin for consistent styling
+    backface-visibility: hidden; // Hide the back face when flipped
 
-        @include flex-column-center; // Use the flex-column-center mixin for layout
-        justify-content: center; 
-    }
+    @include flex-column-center; // Use the flex-column-center mixin for layout
+    justify-content: center;
+  }
 
-    &__front {
-        color: var(--color-text);
-        background-color: var(--color-surface);
-    }
+  &__front {
+    color: var(--color-text);
+    background-color: var(--color-surface);
+  }
 
-    &__back {
-        color: var(--color-surface);
-        background-color: var(--color-text);
-        transform: rotateY(180deg); // Rotate the back face for flipping
-    }
+  &__back {
+    color: var(--color-surface);
+    background-color: var(--color-text);
+    transform: rotateY(180deg); // Rotate the back face for flipping
+  }
 
-    &__title {
-        font-size: calc(var(--font-size) * 1.5);
-        font-weight: bold;
-        margin-top: var(--spacing-unit);
-        margin-bottom: var(--spacing-unit);
-    }
+  &__title {
+    font-size: calc(var(--font-size) * 1.5);
+    font-weight: bold;
+    margin-top: var(--spacing-unit);
+    margin-bottom: var(--spacing-unit);
+  }
 
-    &__time {
-        font-size: calc(var(--font-size) * 0.875);
-        font-style: italic;
-        color: var(--color-text-muted);
-        margin-bottom: var(--spacing-unit);
-    }
+  &__time {
+    font-size: calc(var(--font-size) * 0.875);
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-unit);
+  }
 
-    &__speaker {
-        font-size: calc(var(--font-size) * 1.25);
-        font-weight: bold;
-        color: var(--color-primary);
-        margin-bottom: var(--spacing-unit);
-    }
+  &__speaker {
+    font-size: calc(var(--font-size) * 1.25);
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-unit);
+  }
 
-    &__description {
-        font-size: var(--font-size);
-        margin-bottom: 0;
-    }
+  &__description {
+    font-size: var(--font-size);
+    margin-bottom: 0;
+  }
 }
 
 /* Speaker Card */
-.speaker-card  {
-    background-color: var(--color-surface);
-    @include card-base; // Use the card-base mixin for consistent styling
-    margin: 0;
-    transition: var(--transition-smooth);
+.speaker-card {
+  background-color: var(--color-surface);
+  @include card-base; // Use the card-base mixin for consistent styling
+  margin: 0;
+  transition: var(--transition-smooth);
 
-    height: 100%; // Ensure cards have a consistent height
-    
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+  height: 100%; // Ensure cards have a consistent height
 
-    &__image {
-        width: 100%;
-        height: auto;     
-        margin-bottom: var(--spacing-unit);
-    }
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
-    &__name {
-        font-size: calc(var(--font-size) * 1.25);
-        font-weight: bold;
-        color: var(--color-primary);
-        margin-bottom: var(--spacing-unit);
-    }
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--spacing-unit);
+  }
 
-    &__bio {
-        font-size: var(--font-size);
-        margin-bottom: var(--spacing-unit);
-    }
+  &__name {
+    font-size: calc(var(--font-size) * 1.25);
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-unit);
+  }
+
+  &__bio {
+    font-size: var(--font-size);
+    margin-bottom: var(--spacing-unit);
+  }
 }
 
 /* Tickets Card */
 .ticket-card {
-    @include card-base; // Use the card-base mixin for consistent styling
+  @include card-base; // Use the card-base mixin for consistent styling
+  color: var(--color-surface);
+  background-color: var(--color-text);
+  text-align: center;
+
+  @include flex-column-center; // Use the flex-column-center mixin for layout
+  align-items: center;
+
+  &__type {
+    font-size: calc(var(--font-size) * 1.5);
+    font-weight: bold;
+  }
+
+  &__price {
+    font-size: calc(var(--font-size) * 2);
     color: var(--color-surface);
-    background-color: var(--color-text);
-    text-align: center;
+  }
 
-    @include flex-column-center; // Use the flex-column-center mixin for layout
-    align-items: center;
+  &__benefits {
+    list-style-type: disc;
+    padding-left: var(--spacing-unit);
+    color: var(--color-surface);
+  }
 
-    &__type {
-        font-size: calc(var(--font-size) * 1.5);
-        font-weight: bold;
+  &__button {
+    color: var(--color-surface);
+    background-color: var(--color-secondary);
+    padding: var(--spacing-unit);
+    border: none;
+    border-radius: var(--radius-button);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+
+    &:hover {
+      background-color: var(--color-primary);
     }
 
-    &__price {
-        font-size: calc(var(--font-size) * 2);
-        color: var(--color-surface);
+    &:focus-visible {
+      @include tab-focus; // Use the mixin for focus-visible state
     }
-
-    &__benefits{
-        list-style-type: disc;
-        padding-left: var(--spacing-unit);
-        color: var(--color-surface);
-    }
-
-    &__button {
-        color: var(--color-surface);        
-        background-color: var(--color-secondary);
-        padding: var(--spacing-unit);
-        border: none;
-        border-radius: var(--radius-button);
-        cursor: pointer;
-        transition: var(--transition-smooth);
-
-        &:hover {
-            background-color: var(--color-primary);
-        }
-
-        &:focus-visible {
-            @include tab-focus; // Use the mixin for focus-visible state
-        }
-    }
+  }
 }
 
 /* Special styling for the VIP ticket card */
-.tickets__grid > li:nth-child(2) .ticket-card { // Pseudo-class selector for the second ticket card (VIP)
-    background-color: var(--color-secondary);
-    color: var(--color-surface);
+.tickets__grid > li:nth-child(2) .ticket-card {
+  // Pseudo-class selector for the second ticket card (VIP)
+  background-color: var(--color-secondary);
+  color: var(--color-surface);
 
-    .ticket-card__button {
-        background-color: var(--color-text);
+  .ticket-card__button {
+    background-color: var(--color-text);
 
-        &:hover {
-            background-color: var(--color-primary);
-        }
+    &:hover {
+      background-color: var(--color-primary);
     }
+  }
 }
 
 /* Location Image */
 .location__image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: var(--radius-card);
-    border: 2px solid var(--color-primary);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  border: 2px solid var(--color-primary);
 }
 
 /* Footer */
 .footer {
-    background-color: var(--color-surface);
-    padding: var(--spacing-unit);
+  background-color: var(--color-surface);
+  padding: var(--spacing-unit);
 
-    &__text {
-        margin: 0;
-        font-size: calc(var(--font-size) * 0.875);
+  &__text {
+    margin: 0;
+    font-size: calc(var(--font-size) * 0.875);
+  }
+
+  &__back-to-top {
+    display: inline-block;
+    margin-top: var(--spacing-unit);
+    font-size: calc(var(--font-size) * 0.875);
+    color: var(--color-primary);
+    transition: var(--transition-smooth);
+
+    &:hover {
+      color: var(--color-secondary);
     }
-
-    &__back-to-top {
-        display: inline-block;
-        margin-top: var(--spacing-unit);
-        font-size: calc(var(--font-size) * 0.875);
-        color: var(--color-primary);
-        transition: var(--transition-smooth);
-
-        &:hover {
-            color: var(--color-secondary);
-        }
-    }
+  }
 }

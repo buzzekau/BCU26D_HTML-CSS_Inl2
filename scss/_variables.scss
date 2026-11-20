@@ -1,75 +1,75 @@
 /* Variables */
 :root {
-    /* Colors */
-    --color-bg: #3D3640;
-    --color-surface: #000000;
-    --color-text: #19F500;
-    --color-text-muted: #FFFFFF;
-    --color-primary: #F518A7;
-    --color-secondary: #F5D018;
+  /* Colors */
+  --color-bg: #3d3640;
+  --color-surface: #000000;
+  --color-text: #19f500;
+  --color-text-muted: #ffffff;
+  --color-primary: #f518a7;
+  --color-secondary: #f5d018;
 
-    /* Typography */
-    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-size: 1rem;
-    --line-height: 1.5;
+  /* Typography */
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --font-size: 1rem;
+  --line-height: 1.5;
 
-    /* Spacing */
-    --spacing-unit: 1rem;
-    --radius-card: 12px;
-    --radius-button: 6px;
-    --transition-smooth: all 0.3s ease-in-out;
+  /* Spacing */
+  --spacing-unit: 1rem;
+  --radius-card: 12px;
+  --radius-button: 6px;
+  --transition-smooth: all 0.3s ease-in-out;
 }
 
 /* Light mode */
 @media (prefers-color-scheme: light) {
-    :root {
-        --color-bg: #f5f5f7;
-        --color-surface: #FFFFFF;
-        --color-text: #111111;
-        --color-text-muted: #555555;
-        --color-primary: #880AC2;
-        --color-secondary: #2900F5;
-    }
+  :root {
+    --color-bg: #f5f5f7;
+    --color-surface: #ffffff;
+    --color-text: #111111;
+    --color-text-muted: #555555;
+    --color-primary: #880ac2;
+    --color-secondary: #2900f5;
+  }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    a,
-    .program-card__inner,
-    .speaker-card,
-    .ticket-card__button,
-    .footer__back-to-top {
-        transition: none;
-    }
+  a,
+  .program-card__inner,
+  .speaker-card,
+  .ticket-card__button,
+  .footer__back-to-top {
+    transition: none;
+  }
 }
 
 /* Mixin for focus-visible state */
-@mixin tab-focus () {
-        outline: 2px solid var(--color-primary);
-        outline-offset: 2px;
+@mixin tab-focus() {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
-@mixin card-base () {
-    padding: var(--spacing-unit);
-    border: 2px solid var(--color-text);
-    border-radius: var(--radius-card);
+@mixin card-base() {
+  padding: var(--spacing-unit);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-card);
 }
 
-@mixin flex-column-center () {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-unit);
+@mixin flex-column-center() {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-unit);
 }
 
 /* Keep content available to assistive technology while hiding it visually. */
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
