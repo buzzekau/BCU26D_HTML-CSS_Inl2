@@ -49,6 +49,18 @@
         outline-offset: 2px;
 }
 
+@mixin card-base () {
+    padding: var(--spacing-unit);
+    border: 2px solid var(--color-text);
+    border-radius: var(--radius-card);
+}
+
+@mixin flex-column-center () {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-unit);
+}
+
 /* Keep content available to assistive technology while hiding it visually. */
 .visually-hidden {
     position: absolute;

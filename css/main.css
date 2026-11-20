@@ -211,6 +211,7 @@ section > p {
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-unit);
   justify-content: center;
 }
 .program-card__front {
@@ -225,6 +226,7 @@ section > p {
 .program-card__title {
   font-size: calc(var(--font-size) * 1.5);
   font-weight: bold;
+  margin-top: var(--spacing-unit);
   margin-bottom: var(--spacing-unit);
 }
 .program-card__time {
@@ -275,16 +277,16 @@ section > p {
 
 /* Tickets Card */
 .ticket-card {
-  color: var(--color-surface);
-  background-color: var(--color-text);
   padding: var(--spacing-unit);
   border: 2px solid var(--color-text);
   border-radius: var(--radius-card);
+  color: var(--color-surface);
+  background-color: var(--color-text);
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--spacing-unit);
+  align-items: center;
 }
 .ticket-card__type {
   font-size: calc(var(--font-size) * 1.5);
