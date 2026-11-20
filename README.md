@@ -57,6 +57,7 @@ This project strictly follows the **BEM (Block, Element, Modifier)** methodology
     BEM pairs seamlessly with SCSS nesting using the parent selector (`&`), keeping stylesheet partials DRY and readable without creating deep selector chains: 
 
     #### HTML (`index.html`) 
+    ```
     <article class="program-card" tabindex="0">
         <div class="program-card__inner">
             <div class="program-card__front">
@@ -72,8 +73,10 @@ This project strictly follows the **BEM (Block, Element, Modifier)** methodology
             </div>
         </div>
     </article>
+    ```
 
     ### SCSS (`_layout.css`)
+    ```
     .program-card { 
         perspective: 1000px; 
         
@@ -104,8 +107,9 @@ This project strictly follows the **BEM (Block, Element, Modifier)** methodology
             font-size: calc(var(--font-size) * 1.5); 
         } 
     }
+    ```
 
-### 1. Advanced Selectors
+### 2. Advanced Selectors
 - **Pseudo-classes**: 
     - `:hover` - Links & Buttons change background/text colors on mouse hover; Speaker & Program cards trigger interactive visual states.
     - `:focus-visible` - Displays a prominent outline on links and buttons exclusively during keyboard navigation (`Tab`), keeping focus indicators clear for accessibility without showing focus rings on mouse clicks.
