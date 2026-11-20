@@ -1,6 +1,4 @@
-@use "variables";
-
-
+@use "variables" as *;
 
 /* Links */
 a {
@@ -13,8 +11,7 @@ a {
     }
 
     &:focus-visible { // Pseudo-class for focus state
-        outline: 2px solid var(--color-primary);
-        outline-offset: 2px;
+        @include tab-focus; // Use the mixin for focus-visible state
     }
 }
 
@@ -96,9 +93,8 @@ section { // Style for all sections
 
     /* Flip effect on hover AND keyboard focus */
     &:hover &__inner,
-    &:focus-within &__inner { /* Pseudo-class for focus state */
-        outline: 2px solid var(--color-primary);
-        outline-offset: 2px;
+    &:focus-within &__inner { // Pseudo-class for focus state
+        @include tab-focus; // Use the mixin for focus-visible state
         transform: rotateY(180deg); // Flip the card on hover
     }
 
@@ -110,9 +106,8 @@ section { // Style for all sections
         transform-style: preserve-3d;
     }
 
-    /* Front and Back Faces */
     &__front,
-    &__back {
+    &__back { // Both front and back faces of the card
         position: absolute;
         inset: 0;
         padding: var(--spacing-unit);
@@ -239,8 +234,7 @@ section { // Style for all sections
         }
 
         &:focus-visible {
-            outline: 2px solid var(--color-primary);
-            outline-offset: 2px;
+            @include tab-focus; // Use the mixin for focus-visible state
         }
     }
 }
@@ -252,10 +246,10 @@ section { // Style for all sections
 
     .ticket-card__button {
         background-color: var(--color-text);
-    }
 
-    .ticket-card__button:hover {
-        background-color: var(--color-primary);
+        &:hover {
+            background-color: var(--color-primary);
+        }
     }
 }
 

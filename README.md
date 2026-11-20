@@ -62,7 +62,7 @@ This project strictly follows the **BEM (Block, Element, Modifier)** methodology
         <div class="program-card__inner">
             <div class="program-card__front">
                 <h3 lass="program-card__title">Keynote: The Future of Web3</h3>
-                <p class="program-card__time">                <time>09:00 AM</time>                </p>
+                <p class="program-card__time"> <time>09:00 AM</time></p>
                 <p class="program-card__speaker">Speaker: Jane Doe</p>
             </div>
             <div class="program-card__back">
@@ -96,7 +96,7 @@ This project strictly follows the **BEM (Block, Element, Modifier)** methodology
         }
         
         &__front { 
-            background-color: var(--color-surface);
+            background-color: $color-surface;
         } 
         
         &__back { 
@@ -104,7 +104,7 @@ This project strictly follows the **BEM (Block, Element, Modifier)** methodology
         }
         
         &__title { 
-            font-size: calc(var(--font-size) * 1.5); 
+            font-size: calc($font-size) * 1.5; 
         } 
     }
     ```
