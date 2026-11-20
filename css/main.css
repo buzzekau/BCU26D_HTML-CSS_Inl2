@@ -153,6 +153,12 @@ section > p {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--spacing-unit);
 }
+.program__grid > li,
+.speakers__grid > li,
+.tickets__grid > li {
+  display: flex;
+  flex-direction: column;
+}
 
 /* Header*/
 .header {
@@ -261,7 +267,7 @@ section > p {
 }
 .program-card__description {
   font-size: var(--font-size);
-  margin: 0;
+  margin-bottom: 0;
 }
 
 /* Speaker Card */
@@ -272,6 +278,7 @@ section > p {
   border-radius: var(--radius-card);
   margin: 0;
   transition: var(--transition-smooth);
+  height: 100%;
 }
 .speaker-card:hover {
   transform: translateY(-5px);
@@ -337,14 +344,14 @@ section > p {
 }
 
 /* Special styling for the VIP ticket card */
-.ticket-card:nth-child(2) {
+.tickets__grid > li:nth-child(2) .ticket-card {
   background-color: var(--color-secondary);
   color: var(--color-surface);
 }
-.ticket-card:nth-child(2) .ticket-card__button {
+.tickets__grid > li:nth-child(2) .ticket-card .ticket-card__button {
   background-color: var(--color-text);
 }
-.ticket-card:nth-child(2) .ticket-card__button:hover {
+.tickets__grid > li:nth-child(2) .ticket-card .ticket-card__button:hover {
   background-color: var(--color-primary);
 }
 

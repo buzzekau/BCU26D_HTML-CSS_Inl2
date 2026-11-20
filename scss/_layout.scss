@@ -46,6 +46,11 @@ section { // Style for all sections
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--spacing-unit);
+
+    > li {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Header*/
@@ -167,7 +172,7 @@ section { // Style for all sections
 
     &__description {
         font-size: var(--font-size);
-        margin: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -177,6 +182,8 @@ section { // Style for all sections
     @include card-base; // Use the card-base mixin for consistent styling
     margin: 0;
     transition: var(--transition-smooth);
+
+    height: 100%; // Ensure cards have a consistent height
     
     &:hover {
         transform: translateY(-5px);
@@ -248,7 +255,7 @@ section { // Style for all sections
 }
 
 /* Special styling for the VIP ticket card */
-.ticket-card:nth-child(2) { // Pseudo-class selector for the second ticket card (VIP)
+.tickets__grid > li:nth-child(2) .ticket-card { // Pseudo-class selector for the second ticket card (VIP)
     background-color: var(--color-secondary);
     color: var(--color-surface);
 
