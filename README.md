@@ -36,8 +36,13 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
 
 - [ ] **Audit**
     - [x] Requirement checklist implemented (see below at Kravlist & G/VG Criteria)
-    - [ ] Code formated 
-    - [ ] HTML & CSS validated via W3C
+    - [x] Code formated 
+    - [x] HTML & CSS validated via W3C
+
+        ![Screenshot of HTML validation](images/HTML_validation.png)
+
+        ![Screenshot of CSS validation](images/CSS_validation.png)
+
     - [ ] Accessibility, Best Practice and Performance analysis done via Lighthouse
     - [ ] README.md file update with AI log and learnings
 
