@@ -8,7 +8,7 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
 - [x] **Concept & Setup**
     - [x] Simple wireframe of web page created
 
-        ![Conference Wireframe](images/conference_webpage_wireframe.png)
+        ![Conference Wireframe](images/conference_webpage_wireframe.webp)
 
     - [x] Theme of the conference chosen -Web3
     - [x] Framework (Sass or Tailwind) for CSS chosen - Sass
@@ -43,7 +43,12 @@ A fictive "one-page" Web3 conference web page, with program, speaker overview, a
 
         ![Screenshot of CSS validation](images/CSS_validation.png)
 
-    - [ ] Accessibility, Best Practice and Performance analysis done via Lighthouse
+    - [ ] Accessibility (100), Best Practice (96) and Performance analysis done via Lighthouse
+
+        ![Screenshot of accessibility analysis](images/accessibilty_analysis.png)
+
+        ![Sreenshot of best practices analysis](images/best_practices_analysis.png)
+
     - [ ] README.md file update with AI log and learnings
 
 ## Documentation
